@@ -8,8 +8,8 @@
 <h2>AngularJS Sample Application</h2>
 
 <div ng-app = "mainApp" ng-controller = "StudentController">
-    <student name = "Mahesh"></student><br/>
-    <student name = "Piyush"></student>
+    <student name = "Tasnim"></student><br/>
+    <student name = "ABC"></student>
 </div>
 
 <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -24,7 +24,7 @@
 
         directive.scope = {
             student : "=name"
-        }
+        };
 
         directive.compile = function(element, attributes) {
             element.css("border", "1px solid #cccccc");
@@ -32,21 +32,21 @@
             var linkFunction = function($scope, element, attributes) {
                 element.html("Student: <b>"+$scope.student.name +"</b> , Roll No: <b>"+$scope.student.rollno+"</b><br/>");
                 element.css("background-color", "#ff00ff");
-            }
+            };
             return linkFunction;
-        }
+        };
 
         return directive;
     });
 
     mainApp.controller('StudentController', function($scope) {
-        $scope.Mahesh = {};
-        $scope.Mahesh.name = "Tasnim Mansur";
-        $scope.Mahesh.rollno  = 1;
+        $scope.Tasnim = {};
+        $scope.Tasnim.name = "Tasnim Mansur";
+        $scope.Tasnim.rollno  = 1;
 
-        $scope.Piyush = {};
-        $scope.Piyush.name = "ABC PQR";
-        $scope.Piyush.rollno  = 2;
+        $scope.ABC = {};
+        $scope.ABC.name = "ABC PQR";
+        $scope.ABC.rollno  = 2;
     });
 
 </script>
